@@ -1,6 +1,6 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
-import App from "./components/App";
+import pi, {doublePi,triplePi} from "./math";
 
 // const rootElement = document.getElementById("root");
 // const root = createRoot(rootElement);
@@ -9,5 +9,12 @@ import App from "./components/App";
 const root = createRoot(document.getElementById("root"));
 
 root.render(
-<App />
+<ul>
+  <li>1</li>
+  <li>2</li>
+  <li>3</li>
+  <li>{pi}</li>
+  <li>{doublePi()}</li>
+  <li>{triplePi()}</li>
+</ul>
 );
