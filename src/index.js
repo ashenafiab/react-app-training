@@ -7,15 +7,13 @@ import { createRoot } from "react-dom/client";
 //which is the same as below
 const root = createRoot(document.getElementById("root"));
 
-const fname = "Ashenafi";
-const lname = "Abebaw";
-const num = 7;
+const name = "Ashenafi";
+const currentDate = new Date();
+const year = currentDate.getFullYear();
+
 root.render(
   <div>
-    <h1>Hello {fname + " " + lname}!</h1>
-    <p>Your Lucky Number is {num}</p>
-    {/* <p>Your Lucky Number is {3+9}</p> */}
-    {/* <p>Your Lucky Number is {Math.random()}</p> */}
-    {/* <p>Your Lucky Number is {Math.floor(Math.random() * 10)}</p> */}
+    <p>Created by {name}</p>
+    <p>Copyright {year}</p>
   </div>
 );
