@@ -7,14 +7,27 @@ import { createRoot } from "react-dom/client";
 //which is the same as below
 const root = createRoot(document.getElementById("root"));
 
- const customStyle = {
-    color: "red",
-    fontSize: "20px",
-    border: "1px solid black"
- };
+const date = new Date();
+const currentTime = date.getHours();
 
- customStyle.color = "blue";
+let greeting;
+
+const customStyle = {
+  color: ""
+};
+
+if (currentTime < 12) {
+  greeting = "Good Morning";
+  customStyle.color = "red";
+} else if (currentTime < 18) {
+  greeting = "Good Afternoon";
+  customStyle.color = "green";
+}
+else {
+  greeting = "Good Evening";
+  customStyle.color = "blue";
+}
 
 root.render(
-<h1 style={customStyle}>Hello World!</h1>
+  <h1 className="heading" style={customStyle}>{greeting}</h1>
 );
