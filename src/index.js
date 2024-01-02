@@ -1,5 +1,6 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
+import App from "./components/App";
 
 // const rootElement = document.getElementById("root");
 // const root = createRoot(rootElement);
@@ -7,27 +8,6 @@ import { createRoot } from "react-dom/client";
 //which is the same as below
 const root = createRoot(document.getElementById("root"));
 
-const date = new Date();
-const currentTime = date.getHours();
-
-let greeting;
-
-const customStyle = {
-  color: ""
-};
-
-if (currentTime < 12) {
-  greeting = "Good Morning";
-  customStyle.color = "red";
-} else if (currentTime < 18) {
-  greeting = "Good Afternoon";
-  customStyle.color = "green";
-}
-else {
-  greeting = "Good Evening";
-  customStyle.color = "blue";
-}
-
 root.render(
-  <h1 className="heading" style={customStyle}>{greeting}</h1>
+<App />
 );
