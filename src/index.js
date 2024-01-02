@@ -9,7 +9,13 @@ const root = createRoot(document.getElementById("root"));
 
 root.render(
   <div>
-    <h1>Hello world!</h1>
-    <p>This is the begining of JSX</p>
+    <h1>My Favorite Foods</h1>
+    <ul
+    // style={{ listStyleType: "decimal" }}
+    >
+      <li>Burger</li>
+      <li>Shekla Tibs</li>
+      <li>Kitfo</li>
+    </ul>
   </div>
 );
