@@ -14,11 +14,11 @@ const contacts = [
       email: "lisa@kurdow.com"
     },
     {
-      name: "Ashenafi A",
+      name: "Ross Geller",
       imgURL:
-        "https://media.licdn.com/dms/image/D4E03AQFPOFyVUElmVg/profile-displayphoto-shrink_800_800/0/1679924676844?e=2147483647&v=beta&t=CLdJBFlo2a8wj2SB-1jpOhTlKfJJeWn8Nn21EcfE950",
+      "https://wallpapercave.com/dwp1x/wp3767365.jpg",
       phone: "+251000000000",
-      email: "ashu@gmail.com"
+      email: "david@gmail.com"
     }
   ];
   
