@@ -1,22 +1,41 @@
 import React from "react";
-import Card from "./Card";
-import contacts from "../contacts";
-import Avatar from "./Avatar";
+import Entry from "./Entry";
+import emojipedia from "../emojipedia";
+
+//1. Extract the repeated parts of the App into a Entry component.
+//2. Use props to make the Entry component render different data.
+//3a. Import the emojipedia constant.
+//3b. Map through the emojipedia array and render Entry components.
+
+//Emojipedia has 3 entries, so createEntry gets called 3 times.
+//Each time, it passes 1 item from the emojipedia array as a var called emojiTerm.
+
+//var emojiTerm = {
+//   id: 1,
+//   emoji: "💪",
+//   name: "Tense Biceps",
+//   meaning:
+//     "“You can do that!” or “I feel strong!” Arm with tense biceps. Also used in connection with doing sports, e.g. at the gym."
+// }
+
+function createEntry(emojiTerm) {
+  return (
+    <Entry
+      key={emojiTerm.id}
+      emoji={emojiTerm.emoji}
+      name={emojiTerm.name}
+      description={emojiTerm.meaning}
+    />
+  );
+}
 
 function App() {
   return (
     <div>
-      <h1 className="heading">My Contacts</h1>
-      <Avatar img="https://media.licdn.com/dms/image/D4E03AQFPOFyVUElmVg/profile-displayphoto-shrink_800_800/0/1679924676844?e=2147483647&v=beta&t=CLdJBFlo2a8wj2SB-1jpOhTlKfJJeWn8Nn21EcfE950" />
-      {contacts.map((contact) => (
-        <Card
-          key={contact.id} // this is a special prop that React will look for and use to identify each unique element amongst its siblings. This way, React will know which elements to re-render when a change occurs.
-          name={contact.name}
-          img={contact.imgURL}
-          phone={contact.phone}
-          email={contact.email}
-        />
-      ))}
+      <h1>
+        <span>emojipedia</span>
+      </h1>
+      <dl className="dictionary">{emojipedia.map(createEntry)}</dl>
     </div>
   );
 }
