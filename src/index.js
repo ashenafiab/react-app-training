@@ -1,6 +1,19 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
-import App from "./components/App";
+import cars from "./practice";
+
+// Destructure the cars array to get the first item in the array
+const [honda, tesla] = cars;
+
+// Destructure the speedStats object to get the topSpeed property
+// from the first item in the array
+const {speedStats: {topSpeed: hondaTopSpeed}} = honda;
+const {speedStats: {topSpeed: teslaTopSpeed}} = tesla;
+
+// Destructure the coloursByPopularity array to get the first item
+// from the first item in the array
+const {coloursByPopularity: [hondaTopColour]} = honda;
+const {coloursByPopularity: [teslaTopColour]} = tesla;
 
 // const rootElement = document.getElementById("root");
 // const root = createRoot(rootElement);
@@ -9,13 +22,22 @@ import App from "./components/App";
 const root = createRoot(document.getElementById("root"));
 
 root.render(
-<App />
+    <table>
+        <tr>
+            <th>Brand</th>
+            <th>Top Speed</th>
+            <th>Top Colour</th>
+        </tr>
+        <tr>
+            <td>{tesla.model}</td>
+            <td>{teslaTopSpeed}</td>
+            <td>{teslaTopColour}</td>
+        </tr>
+        <tr>
+            <td>{honda.model}</td>
+            <td>{hondaTopSpeed}</td>
+            <td>{hondaTopColour}</td>
+        </tr>
+    </table>
 );
 
-//Challenge:
-//1. Show the latest time in the <h1> when the Get Time button
-//is pressed.
-
-//2. Given that you can get code to be called every second
-//using the setInterval method.
-//Can you get the time in your <h1> to update every second?
