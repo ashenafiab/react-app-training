@@ -1,22 +1,20 @@
 import React from "react";
 
 function App() {
-// one react hooks example ; useState
-  var [count, setCount] = React.useState(0);
+  const now = new Date().toLocaleTimeString();
+  const [time, setTime] = React.useState(now);
+  setInterval(updateTime, 1000);
 
-  function decrease() {
-    setCount(count - 1);
-  }
-
-  function increase() {
-    setCount(count + 1);
+  function updateTime() {
+    const newTime = new Date().toLocaleTimeString();
+    setTime(newTime);
+    //   console.log(newTime);
   }
 
   return (
     <div className="container">
-      <h1>{count}</h1>
-      <button onClick={decrease}>-</button>
-      <button onClick={increase}>+</button>
+      <h1>{time}</h1>
+      <button onClick={updateTime}>Get Time</button>
     </div>
   );
 }
